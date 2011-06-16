@@ -1,7 +1,6 @@
 django-twitter
 ==============
-django-twitter is a django application that allows you to login into Twitter in a 
-easy and unobstrusive way:\n
+django-twitter allows your users to login into your application using Twitter
 
     Write {{url twitte_bebin_auth}} in your view inside your template. 
     When the user is redirected from Twitter to your application, django-twitter raises token_received signal. 
