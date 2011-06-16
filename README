@@ -1,10 +1,8 @@
-django-twitter
-==============
 django-twitter allows your users to login into your application using Twitter
 
-    Write {{url twitte_bebin_auth}} in your view inside your template. 
-    When the user is redirected from Twitter to your application, django-twitter raises token_received signal. 
-    You can do whatever you want with the tokens received from Twitter. 
+Write {{url twitte_bebin_auth}} in your view inside your template. 
+When the user is redirected from Twitter to your application, django-twitter raises token_received signal. 
+You can do whatever you want with the tokens received from Twitter. 
 
 How To Use
 ==========
