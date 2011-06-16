@@ -1,8 +1,4 @@
-django-twitter allows your users to login into your application using Twitter
-
-Write {{url twitte_bebin_auth}} in your view inside your template. 
-When the user is redirected from Twitter to your application, django-twitter raises token_received signal. 
-You can do whatever you want with the tokens received from Twitter. 
+django-twitter allows your users to login into your application using Twitter in a easy way.
 
 How To Use
 ==========
@@ -31,9 +27,8 @@ signals.tokens_received.connect(tokens_received)
 
 How it works
 ============
-To insert the link to Twitter, in your template include this: '{% url twitter_begin_auth %}'. 
-Then the user is redirected to Twitter. 
-When the username and password is inserted, then redirects to CALLBACK_URL in your application and tokens_received signal is raised.
+To insert the link to Twitter, include this in your template : {% url twitter_begin_auth %} in a link. 
+When the user click on the link, is redirected to Twitter, and once logged in, it will redirect you to CALLBACK_URL in your application and tokens_received signal will be raised.
 
 NOTE:
 -----
