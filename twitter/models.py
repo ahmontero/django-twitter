@@ -13,4 +13,4 @@ class ProfileUser(models.Model):
         verbose_name=_("Oauth Secret"))
 
     def __unicode__(self):
-        return u"%s" % self.username
+        return u"%s" % self.user
