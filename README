@@ -6,7 +6,7 @@ How To Use
 
 2. include('twitter.urls') in your url app
 
-2. Add in settings.py:
+3. Add in settings.py:
     CONSUMER_KEY = "your_consumer_key"
     CONSUMER_SECRET = "your_consumer_secret"
     AUTH_PROFILE_MODULE = 'twitter.ProfileUser'
@@ -18,7 +18,7 @@ AUTH_PROFILE_MODULE: django-twitter uses an user profile to store the credential
 AUTH_PROFILE_MODULE: You need to specify this profile:'twitter.ProfileUser'.
 CALLBACK_URL: is the url inside your application that should be shown when the authentication process went ok. It must be same as Twitter callback url.
 
-3. Connect with tokens_received signal:
+4. Connect with tokens_received signal:
 
 from twitter import signals
 
