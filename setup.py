@@ -17,7 +17,7 @@ setup(
     include_package_data=True,
 
     # Package dependencies.
-    install_requires=['oauth2'],
+    install_requires=['twython', 'oauth2'],
 
     # Metadata for PyPI.
     author='Antonio Hinojo Montero',
