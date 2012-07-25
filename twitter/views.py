@@ -36,14 +36,7 @@ class CallbackUrlView(RedirectView):
         ***
     """
     permanent = True
-
-    def get_redirect_url(self, *kwargs):
-        if self.request.get_full_path:
-            self.url = self.request.get_full_path
-        else:
-            self.url = settings.CALLBACK_URL
-
-        return super(CallbackUrlView, self).get_redirect_url(*kwargs)
+    url = settings.CALLBACK_URL
 
     def get(self, request, *args, **kwargs):
         # Exchange magic tokens for permanent ones and raise signal
