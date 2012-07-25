@@ -11,4 +11,4 @@ class OAuthProfile(models.Model):
         verbose_name=_("Oauth Secret"))
 
     def __unicode__(self):
-        return u"%s" % self.user
+        return u"%s %s" % (self.oauth_token, self.oauth_secret)
