@@ -1,10 +1,12 @@
 # -*- encoding: utf-8 -*-
 
-from django.views.generic import RedirectView
-from django.contrib.auth.models import User
 from django.conf import settings
+from django.contrib.auth.models import User
+from django.core.urlresolvers import reverse
+from django.views.generic import RedirectView
 
 import signals
+
 from toauth import Twitter
 
 
@@ -33,8 +35,15 @@ class CallbackUrlView(RedirectView):
             This view launchs the signal to your app with the tokens you want
         ***
     """
-    permanent = False
-    url = settings.CALLBACK_URL
+    permanent = True
+
+    def get_redirect_url(self, *kwargs):
+        if self.request.get_full_path:
+            self.url = self.request.get_full_path
+        else:
+            self.url = settings.CALLBACK_URL
+
+        return super(CallbackUrlView, self).get_redirect_url(*kwargs)
 
     def get(self, request, *args, **kwargs):
         # Exchange magic tokens for permanent ones and raise signal
