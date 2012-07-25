@@ -5,7 +5,7 @@ from setuptools import setup
 from setuptools import find_packages
 
 __author__ = 'Antonio Hinojo Montero <hello@ahmontero.com>'
-__version__ = '1.0'
+__version__ = '1.1'
 
 setup(
     #Basic package information.
