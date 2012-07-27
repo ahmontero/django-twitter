@@ -15,6 +15,10 @@ class RedirectToTwitterView(RedirectView):
         This view initiates the handshake.
     """
     def get_redirect_url(self, *kwargs):
+
+        current_url = self.request.get_full_path()
+        self.request.session['django.twitter.current_url'] = current_url
+
         twitter = Twitter(twitter_token=settings.CONSUMER_KEY,
                           twitter_secret=settings.CONSUMER_SECRET)
 
@@ -22,6 +26,7 @@ class RedirectToTwitterView(RedirectView):
         auth_props = twitter.get_authentication_tokens()
 
         self.request.session['request_token'] = auth_props
+
         self.url = auth_props['auth_url']
 
         return super(RedirectToTwitterView, self).get_redirect_url(*kwargs)
@@ -57,5 +62,10 @@ class CallbackUrlView(RedirectView):
                                      screen_name=screen_name,
                                      oauth_token=oauth_token,
                                      oauth_token_secret=oauth_token_secret)
+
+        current_url = request.session.get('django.twitter.current_url', False)
+        if current_url:
+            self.url = current_url
+            del request.session['django.twitter.current_url']
 
         return super(CallbackUrlView, self).get(request, *args, **kwargs)
