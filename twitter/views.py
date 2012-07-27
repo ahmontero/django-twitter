@@ -16,7 +16,7 @@ class RedirectToTwitterView(RedirectView):
     """
     def get_redirect_url(self, *kwargs):
 
-        current_url = self.request.get_full_path()
+        current_url = self.request.META['HTTP_REFERER']
         self.request.session['django.twitter.current_url'] = current_url
 
         twitter = Twitter(twitter_token=settings.CONSUMER_KEY,
