@@ -15,7 +15,6 @@ class RedirectToTwitterView(RedirectView):
         This view initiates the handshake.
     """
     def get_redirect_url(self, *kwargs):
-
         current_url = self.request.META['HTTP_REFERER']
         self.request.session['django.twitter.current_url'] = current_url
 
