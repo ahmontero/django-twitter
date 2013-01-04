@@ -17,7 +17,7 @@ setup(
     include_package_data=True,
 
     # Package dependencies.
-    install_requires=['twython', 'oauth2'],
+    install_requires=['oauth2'],
 
     # Metadata for PyPI.
     author='Antonio Hinojo Montero',
@@ -25,7 +25,7 @@ setup(
     license='MIT License',
     url='http://github.com/ahmontero/django-twitter/tree/master',
     keywords='twitter django login',
-    description='An inobstrusive way to login into Twitter with Django.',
+    description='An inobstrusive way to login with Twitter into your Django application.',
     long_description=open('README').read(),
     classifiers=[
         'Development Status :: 4 - Beta',
