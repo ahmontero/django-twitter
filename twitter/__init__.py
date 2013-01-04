@@ -1,2 +1,6 @@
-__author__ = "Antonio H Montero <hello@ahmontero.com>"
-__version__ = "1.0"
+# -*- coding: utf-8 -*-
+
+__title__ = 'django-twitter'
+__version__ = '1.2'
+__author__ = 'Antonio Hinojo'
+__license__ = 'MIT'
