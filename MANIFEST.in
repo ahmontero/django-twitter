@@ -1,2 +1,1 @@
-include README LICENSE
-recursive-include twitter *.py
+include *.txt README.rst
